@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login Page</title>
+    <style>
+        label {
+            font-size: large;
+        }
+
+        body {
+            background-color: rgba(201, 76, 76, 0.3);
+        }
+    </style>
+    <script>
+        function validateForm() {
+		flag=1;
+            let x = document.forms["log"]["uname"].value;
+            let y = document.forms["log"]["pword"].value;
+            let z = document.forms["log"]["bday"].value;
+            let w = document.forms["log"]["mail"].value;
+            if (x == "") {
+                alert("Fill the username.");
+                return false;
+            }
+            if (y == "") {
+                alert("Enter valid password.");
+                return false;
+            }
+            if (z == ""){
+				alert("Enter your Date of Birth.");
+				return false;
+			}
+                
+            if (w == ""){
+				alert("Enter a Email-id.");
+				return false;
+			}
+                
+			else{
+				alert("Login successfully!!");
+				return true;
+			}
+        }
+    </script>
+</head>
+
+<body>
+    <center>
+        <form name="log" onsubmit="return validateForm()" method="post">
+            <table>
+                <tr>
+                    <h1>User details</h1>
+                </tr>
+                <tr>
+                    <td><b><label for="fname">Username:</label></b></td>
+                    <td><input type="text" id="uname" name="uname"></td>
+                </tr>
+                <tr>
+                    <td><b><label for="password">Password:</label></b></td>
+                    <td><input type="password" id="pass" name="pword"></td>
+                </tr>
+                <tr>
+                    <td><b><label for="Date Of Birth">Date Of Birth:</label></b></td>
+                    <td><input type="date" id="birthday" name="bday"></td>
+                </tr>
+                <tr>
+                    <td><b><label for="email">Email-id:</label></b></td>
+                    <td><input type="email" id="mail" name="mail"></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" id="submit" name="submit"></td>
+               
+               
+                    <td><input type="reset" id="reset" name="reset"></td>
+                </tr>
+            </table>
+        </form>
+    </center>
+
+</html>
